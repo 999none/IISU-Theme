@@ -1,8 +1,3 @@
-diff --git a/README.md b/README.md
-index a056d68c7c770158e1a96197727c30f4821b361d..d00fec4af48560fc899869a36750a6b7fe52f60f 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,37 @@
 -# IISU-Theme
 \ No newline at end of file
 +# iiSU White UI — Nintendo 3DS Theme Build
@@ -42,3 +37,6 @@ index a056d68c7c770158e1a96197727c30f4821b361d..d00fec4af48560fc899869a36750a6b7
 +  info.smdh
 +  README_BUILD.md
 +```
+ 
+EOF
+)
