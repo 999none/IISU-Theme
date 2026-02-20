@@ -8,14 +8,14 @@ Based on 3dbrew.org/wiki/Home_Menu/Themes specification.
 import struct
 import os
 import io
+import sys
 from PIL import Image
 
-# Import LZ11 compressor (from magical/nlzss)
-import sys
-sys.path.insert(0, '/app/backend')
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(ROOT_DIR, 'backend'))
 from lz11 import compress_nlz11
 
-OUTPUT_DIR = "/app/iiSU_White_UI"
+OUTPUT_DIR = os.path.join(ROOT_DIR, "iiSU_White_UI")
 
 # Theme accent colors (RGB888)
 CURSOR_BORDER   = (124, 140, 255)  # #7C8CFF
