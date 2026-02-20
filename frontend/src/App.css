@@ -1,0 +1,295 @@
+/* ============================================
+   iiSU White UI — Preview Page Styles
+   Aesthetic: minimal white, soft pastel violet
+   ============================================ */
+
+:root {
+  --white:    #FFFFFF;
+  --base-1:   #F8F8F8;
+  --base-2:   #F2F2F2;
+  --base-3:   #EAEAED;
+  --accent-1: #7C8CFF;
+  --accent-2: #9FAAFF;
+  --accent-3: #B8C0FF;
+  --accent-4: #D6DBFF;
+  --accent-5: #EDF0FF;
+  --text:     #333333;
+  --text-mid: #78788A;
+  --text-lt:  #B0B0B8;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+/* === Page === */
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 56px 24px 40px;
+  gap: 44px;
+  overflow-x: hidden;
+}
+
+/* Dot texture overlay */
+.dot-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 14px 14px;
+  z-index: 0;
+}
+
+.page > * { position: relative; z-index: 1; }
+
+/* === Header === */
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-mark {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.d1 { background: var(--accent-1); }
+.d2 { background: var(--accent-2); }
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.title-light {
+  font-weight: 300;
+  color: var(--accent-1);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  letter-spacing: 0.06em;
+}
+
+/* === Screens === */
+.screens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.screen-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.screen-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-lt);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.screen-bezel {
+  background: var(--base-3);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease;
+}
+
+.screen-bezel:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.bezel-sm {
+  border-radius: 12px;
+  padding: 7px;
+}
+
+.screen-img {
+  display: block;
+  border-radius: 8px;
+  image-rendering: auto;
+}
+
+/* === Combined Preview === */
+.combined {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.combined-bezel {
+  background: var(--base-3);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease;
+}
+
+.combined-bezel:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.combined-img {
+  display: block;
+  border-radius: 10px;
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+}
+
+/* === Download Button === */
+.download-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 60px;
+  background: var(--accent-1);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow:
+    0 4px 16px rgba(124, 140, 255, 0.25),
+    0 1px 3px rgba(0,0,0,0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background 0.2s ease;
+}
+
+.download-btn:hover,
+.download-btn.glow {
+  transform: translateY(-2px);
+  background: #6B7CFF;
+  box-shadow:
+    0 6px 28px rgba(124, 140, 255, 0.40),
+    0 2px 6px rgba(0,0,0,0.08),
+    0 0 0 4px rgba(124, 140, 255, 0.10);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 10px rgba(124, 140, 255, 0.20),
+    0 1px 3px rgba(0,0,0,0.06);
+}
+
+.download-btn.busy {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+}
+
+.dl-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.download-note {
+  font-size: 0.75rem;
+  color: var(--text-lt);
+  letter-spacing: 0.04em;
+}
+
+/* === Meta Card === */
+.meta-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--base-2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 320px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-key {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.meta-val {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.meta-val.colors {
+  display: flex;
+  gap: 5px;
+}
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* === Footer === */
+.footer {
+  font-size: 0.7rem;
+  color: var(--text-lt);
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .page { padding: 32px 12px 28px; gap: 32px; }
+  .title { font-size: 1.8rem; }
+  .screen-img { width: 100%; height: auto; }
+  .download-btn { padding: 14px 28px; font-size: 0.95rem; }
+  .meta-card { min-width: auto; padding: 18px 20px; }
+}
